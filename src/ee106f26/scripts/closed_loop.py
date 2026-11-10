@@ -59,7 +59,7 @@ class Turtlebot(Node):
         target_projection = start_projection + meters
 
         self.controller.setPoint(target_projection)
-        self.controller.setPD(P=0.5, D=0.5)
+        self.controller.setPD(P=5, D=5)
 
         vel = TwistStamped()
         while True:
@@ -97,7 +97,7 @@ class Turtlebot(Node):
         self.get_logger().info('Turning angle: ' + str(angle))
 
         target_angle = radians(angle)
-        self.controller.setPD(P=0.5, D=0.5)
+        self.controller.setPD(P=5, D=5)
 
         vel = TwistStamped()
         while True:
